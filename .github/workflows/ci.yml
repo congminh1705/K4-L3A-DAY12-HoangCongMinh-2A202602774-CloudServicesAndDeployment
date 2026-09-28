@@ -55,7 +55,7 @@ jobs:
       - name: Install Railway CLI
         run: npm install -g @railway/cli@5.2.0
       - name: Deploy tested commit
-        run: railway up --environment production --service "${GITHUB_REPOSITORY#*/}" --message "$GITHUB_SHA"
+        run: railway up --environment production --service 3aa2a5b3-63a4-4f50-ba67-2af9529fb42a --message "$GITHUB_SHA"
       - name: Smoke test deployed service
         run: |
           curl --fail --silent --show-error --retry 12 --retry-delay 5 --retry-all-errors "$PUBLIC_URL/health"
